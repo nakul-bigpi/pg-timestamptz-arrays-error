@@ -1,0 +1,25 @@
+{
+  "name": "pg-timestamptz-arrays-error",
+  "description": "A reproduction of a Prisma issue with pg-timestamptz-arrays",
+  "author": "nakul-bigpi",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "db:push": "prisma db push",
+    "db:execute": "prisma db execute --schema ./prisma/schema.prisma --file ./prisma/insert-metadata.sql",
+    "test": "node src/main.js"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "6.8.2",
+    "@prisma/client": "6.8.2",
+    "pg": "8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.1",
+    "@types/pg": "8.11.10",
+    "prisma": "6.8.2",
+    "prisma-json-types-generator": "~3.2.3"
+  }
+}

@@ -1,0 +1,12 @@
+services:
+  prisma-pg:
+    image: postgres:14-alpine
+    ports:
+      - "54120:54120"
+    environment:
+      POSTGRES_DB: prismalocal
+      POSTGRES_PASSWORD: prisma-local-only
+      POSTGRES_USER: prismalocal
+    volumes:
+      - ./prisma-pg-data:/var/lib/postgres/data
+    command: -p 54120

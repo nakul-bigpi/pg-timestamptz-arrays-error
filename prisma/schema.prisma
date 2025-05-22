@@ -1,0 +1,21 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../node_modules/prisma-client-autogen"
+  previewFeatures = ["driverAdapters"]
+  binaryTargets   = ["native", "linux-musl", "linux-musl-openssl-3.0.x", "darwin-arm64", "linux-arm64-openssl-1.1.x"]
+}
+
+generator json {
+  provider = "prisma-json-types-generator"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("POSTGRES_URL")
+}
+
+model Metadata {
+  id             String     @id @default(uuid()) @db.Uuid
+  fieldName      String
+  dateListValues DateTime[] @default([]) @db.Timestamptz(0)
+}
