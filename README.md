@@ -48,4 +48,9 @@ Inconsistent column data: Column type 'Unknown' could not be deserialized from t
   ```
 
 5. You should see the error in the console.
+
 6. Relevant code can be found in the `src/main.js` file.
+
+## PostgreSQL insert operation
+
+[This](./prisma/insert-metadata.sql) SQL command can be used to insert a record into the `metadata` table, which works without any issues.

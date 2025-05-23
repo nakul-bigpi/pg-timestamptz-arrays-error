@@ -24,14 +24,13 @@ async function main() {
   await prisma.$connect();
   console.log("[nodejs] connected");
 
-  // Add your changes here
   console.log("[nodejs] creating a Metadata entry...");
 
   try {
     const newMetadata = await prisma.metadata.create({
       data: {
         fieldName: "inductionDates",
-        dateListValues: [new Date(), new Date()], // Creating two timestamps like the SQL example
+        dateListValues: [new Date(), new Date()],
       },
     });
 
